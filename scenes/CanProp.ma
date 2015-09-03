@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: CanProp.ma
-//Last modified: Wed, Sep 02, 2015 08:57:26 PM
+//Last modified: Wed, Sep 02, 2015 09:10:31 PM
 //Codeset: 1252
 requires maya "2015";
 currentUnit -l centimeter -a degree -t film;
@@ -93,6 +93,7 @@ createNode transform -n "trash_Lid" -p "|trash_Can";
 	setAttr -l on ".tx";
 	setAttr -l on ".ty";
 	setAttr -l on ".tz";
+	setAttr ".r" -type "double3" 0 0 65.48 ;
 	setAttr -l on ".rx";
 	setAttr -l on ".ry";
 	setAttr -l on ".sx";

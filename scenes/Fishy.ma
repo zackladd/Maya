@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: Fishy.ma
-//Last modified: Thu, Sep 10, 2015 11:31:26 AM
+//Last modified: Thu, Sep 10, 2015 12:49:41 PM
 //Codeset: 1252
 requires maya "2016";
 requires "stereoCamera" "10.0";
@@ -15,8 +15,8 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "C94E2C2F-467D-81B8-B0F8-E4AF846C2ED5";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -9.060478451631699 3.7089871878135443 -9.0562918736514817 ;
-	setAttr ".r" -type "double3" -11.738352769798178 220.59999999998658 0 ;
+	setAttr ".t" -type "double3" 2.6388849974275068 9.8843716125867971 -9.10574403105473 ;
+	setAttr ".r" -type "double3" -42.338352769401126 524.19999999989739 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "59716952-445D-6F8A-302F-D19813AA14D2";
 	setAttr -k off ".v" no;
@@ -113,10 +113,9 @@ createNode joint -n "Control";
 	rename -uid "2A63E1F7-4A16-FF78-70F6-9CA2BC817D50";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
-	setAttr ".t" -type "double3" -0.0018425904352290662 1.4978461532745282 -0.99999999999999978 ;
-	setAttr ".r" -type "double3" -39.5487033678898 14.841583321689271 -14.625356756335236 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-016 0 1.0000000000000002 0 -0 1 0 0
 		 -1.0000000000000002 -0 2.2204460492503131e-016 0 -0.0018425904352290523 0 -0.99999999999999978 1;
@@ -128,6 +127,7 @@ createNode joint -n "fish_head" -p "Control";
 	setAttr ".oc" 1;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 0 6.3611093629270304e-015 0 ;
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-016 0 1.0000000000000002 0 0 1 0 0
 		 -1.0000000000000002 0 2.2204460492503131e-016 0 -0.0018425904352290523 0 -0.99999999999999978 1;
@@ -137,10 +137,9 @@ createNode joint -n "fish_mid" -p "fish_head";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
-	setAttr ".t" -type "double3" 1.9999999999999996 0 4.4408920985006242e-016 ;
-	setAttr ".r" -type "double3" 14.904070907294535 -39.191087930666278 33.076458835957894 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".dla" yes;
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-016 0 1.0000000000000002 0 0 1 0 0
 		 -1.0000000000000002 0 2.2204460492503131e-016 0 -0.0018425904352290523 0 1.0000000000000002 1;
 	setAttr ".radi" 0.55172413793103448;
@@ -149,10 +148,9 @@ createNode joint -n "fish_tail" -p "fish_mid";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
-	setAttr ".t" -type "double3" 1.9999999999999996 0 4.4408920985006242e-016 ;
-	setAttr ".r" -type "double3" 0 -41.787413501422236 29.75494422652595 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".dla" yes;
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-016 0 1.0000000000000002 0 0 1 0 0
 		 -1.0000000000000002 0 2.2204460492503131e-016 0 -0.0018425904352290523 0 3 1;
 	setAttr ".radi" 0.55172413793103448;
@@ -161,9 +159,9 @@ createNode joint -n "fish_end" -p "fish_tail";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
-	setAttr ".t" -type "double3" 2.0000000000000004 0 4.4408920985006262e-016 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".bps" -type "matrix" 1.0000000000000004 0 0 0 0 1 0 0 0 0 1.0000000000000004 0
 		 -0.0018425904352290523 0 5.0000000000000009 1;
@@ -509,8 +507,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 0 \n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"sequenceEditorPanel\" -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 1 \n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
 		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperGraphPanel\" -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 0.50503\n                -animateTransition 0\n                -showRelationships 1\n"
-		+ "                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 5\n                -currentNode \"Control\" \n                -opaqueContainers 0\n                -dropTargetNode \"Control\" \n                -dropNode \"pCube1\" \n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"largeIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 0.50503\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 5\n                -currentNode \"Control\" \n                -opaqueContainers 0\n                -dropTargetNode \"Control\" \n                -dropNode \"pCube1\" \n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n"
+		+ "                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 5\n                -currentNode \"fish_mid\" \n                -opaqueContainers 0\n                -dropTargetNode \"Control\" \n                -dropNode \"pCube1\" \n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"largeIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 0.50503\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 5\n                -currentNode \"fish_mid\" \n                -opaqueContainers 0\n                -dropTargetNode \"Control\" \n                -dropNode \"pCube1\" \n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n"
 		+ "                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"largeIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\tif ($useSceneConfig) {\n\t\tscriptedPanel -e -to $panelName;\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"visorPanel\" -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
 		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"createNodePanel\" -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"polyTexturePlacementPanel\" -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n"
 		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"renderWindowPanel\" -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"blendShapePanel\" (localizedPanelLabel(\"Blend Shape\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\tblendShapePanel -unParent -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels ;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tblendShapePanel -edit -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" == $panelName) {\n"
@@ -1305,9 +1303,340 @@ createNode dagPose -n "bindPose1";
 	setAttr -s 5 ".m";
 	setAttr -s 5 ".p";
 	setAttr ".bp" yes;
+createNode animCurveTA -n "Control_rotateX";
+	rename -uid "DFF3CCA4-408B-DA67-45B1-FFAC9B2AE743";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 95 0
+		 108 0 120 0;
+createNode animCurveTA -n "Control_rotateY";
+	rename -uid "0FD657DD-4BF0-CC46-A66A-4CA619A3B8DA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 6.2178816925902129 35 -6.506911745980644
+		 45 0 60 -11.856396447886748 70 0 80 -16.698978593766544 89 0.90599549136911905 95 -13.732009804123997
+		 108 4.2874907153088868 120 0;
+createNode animCurveTA -n "Control_rotateZ";
+	rename -uid "0CEC35CC-4F72-F2AA-298D-63BE9D02A669";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 95 0
+		 108 0 120 0;
+createNode animCurveTA -n "fish_head_rotateX";
+	rename -uid "98465C40-461E-C7AF-9A1E-EBBC135F234F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTA -n "fish_head_rotateY";
+	rename -uid "6472257B-4911-58D0-B816-BF941EAE366E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 -5.2853917368079335 35 1.820440520057536
+		 45 -3.5157379590190323 60 4.0934792377657656 70 8.2268823663427444 80 6.6640358732792029
+		 89 3.8279689738280429 108 -0.89615630824526826 120 0;
+createNode animCurveTA -n "fish_head_rotateZ";
+	rename -uid "AE7C92BC-4604-2E79-C92B-F2846A45665A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTA -n "fish_mid_rotateX";
+	rename -uid "3542D511-42FC-5115-5613-CAB9DEB50D45";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 95 0
+		 108 0 120 0;
+createNode animCurveTA -n "fish_mid_rotateY";
+	rename -uid "7755A6AE-4A62-210C-B5C1-BFAC6DD6DA63";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 -12.098393245653275 35 14.244783884177947
+		 45 -11.160181724088746 60 29.827423385181287 70 -18.153134754456008 80 16.447137650493772
+		 89 -19.231503820368964 95 17.438511158662884 108 -14.859541545698484 120 0;
+createNode animCurveTA -n "fish_mid_rotateZ";
+	rename -uid "D9DD2C45-4FAE-90E9-9966-218B7E25750A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 95 0
+		 108 0 120 0;
+createNode animCurveTA -n "fish_tail_rotateX";
+	rename -uid "7A1E27E5-4300-4AE0-388A-4CB667122967";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 95 0
+		 108 0 120 0;
+createNode animCurveTA -n "fish_tail_rotateY";
+	rename -uid "6B620767-48CF-8951-0832-5D9295D77DF9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 -23.94422072696263 35 28.818449312041423
+		 45 -23.611648074421574 60 26.011909610414893 70 -28.265733035224844 80 25.660641366646583
+		 89 -12.801009320981334 95 24.679340777442164 108 -22.851586027054033 120 0;
+createNode animCurveTA -n "fish_tail_rotateZ";
+	rename -uid "B22695E9-4493-E59F-136B-71BDF9142FDE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 95 0
+		 108 0 120 0;
+createNode animCurveTA -n "fish_end_rotateX";
+	rename -uid "85DBA233-4F20-AF33-C6EA-9AB14449B593";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTA -n "fish_end_rotateY";
+	rename -uid "BD13F7C6-4794-54D1-46B8-BC9DF2694867";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTA -n "fish_end_rotateZ";
+	rename -uid "7893E36C-49A1-EA1E-BEF6-E7B9369882D0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTU -n "Control_visibility";
+	rename -uid "E2FA359E-4BCA-8823-4A1E-5090F52AB1BD";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+	setAttr -s 11 ".kot[0:10]"  5 5 5 5 5 5 5 5 
+		5 5 5;
+createNode animCurveTL -n "Control_translateX";
+	rename -uid "E776E906-4764-A415-B4B3-39BB527726D4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 -0.0018425904352290662 20 -0.0018425904352290662
+		 35 -0.0018425904352290662 45 -0.0018425904352290662 60 -0.0018425904352290662 70 -0.0018425904352290662
+		 80 -0.0018425904352290662 89 -0.0018425904352290662 95 -0.0018425904352290662 108 -0.0018425904352290662
+		 120 -0.0018425904352290662;
+createNode animCurveTL -n "Control_translateY";
+	rename -uid "7244233A-4AB5-FA31-6EEE-B9BF7073D119";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1.4978461532745282 20 1.4978461532745282
+		 35 1.4978461532745282 45 1.4978461532745282 60 1.4978461532745282 70 1.4978461532745282
+		 80 1.4978461532745282 89 1.4978461532745282 95 1.4978461532745282 108 1.4978461532745282
+		 120 1.4978461532745282;
+createNode animCurveTL -n "Control_translateZ";
+	rename -uid "D27E2186-4AAF-AF83-3504-7FB11002FE30";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 -0.99999999999999978 20 -0.99999999999999978
+		 35 -0.99999999999999978 45 -0.99999999999999978 60 -0.99999999999999978 70 -0.99999999999999978
+		 80 -0.99999999999999978 89 -0.99999999999999978 95 -0.99999999999999978 108 -0.99999999999999978
+		 120 -0.99999999999999978;
+createNode animCurveTU -n "Control_scaleX";
+	rename -uid "9B8FBBA4-4B42-5040-5C1F-B48871DCBCBF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "Control_scaleY";
+	rename -uid "A0A77EB2-45EE-AE17-CD04-CA8D29CBA6D6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "Control_scaleZ";
+	rename -uid "3667FCA8-436E-BDEE-2F54-88B2E871C616";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "fish_head_visibility";
+	rename -uid "F41EEDF4-4A88-E6DC-7FD3-1A994B331981";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 108 1
+		 120 1;
+	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
+		5 5;
+createNode animCurveTL -n "fish_head_translateX";
+	rename -uid "3E628688-4C50-29FF-95C4-8A9DE76D868B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTL -n "fish_head_translateY";
+	rename -uid "A266CAB8-40CB-8B99-9F63-1C9B34810334";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTL -n "fish_head_translateZ";
+	rename -uid "F3D29A61-491E-C9A6-51AA-49A5CB13D5DD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTU -n "fish_head_scaleX";
+	rename -uid "47E460F4-42F9-9E33-7244-E6B463672EBF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 108 1
+		 120 1;
+createNode animCurveTU -n "fish_head_scaleY";
+	rename -uid "ABEFCB94-45AD-05F7-AD83-1295F55EAAFF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 108 1
+		 120 1;
+createNode animCurveTU -n "fish_head_scaleZ";
+	rename -uid "AF03205C-4474-5033-2F41-989912119CC9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 108 1
+		 120 1;
+createNode animCurveTU -n "fish_mid_visibility";
+	rename -uid "68F8E716-485C-CD33-91BE-5EA0FEA25136";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+	setAttr -s 11 ".kot[0:10]"  5 5 5 5 5 5 5 5 
+		5 5 5;
+createNode animCurveTL -n "fish_mid_translateX";
+	rename -uid "119B6CE2-4668-1EBD-BE3C-33AAEEC65E05";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1.9999999999999996 20 1.9999999999999996
+		 35 1.9999999999999996 45 1.9999999999999996 60 1.9999999999999996 70 1.9999999999999996
+		 80 1.9999999999999996 89 1.9999999999999996 95 1.9999999999999996 108 1.9999999999999996
+		 120 1.9999999999999996;
+createNode animCurveTL -n "fish_mid_translateY";
+	rename -uid "B488FF7D-4133-860C-2152-44B6BA4BDBAC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 95 0
+		 108 0 120 0;
+createNode animCurveTL -n "fish_mid_translateZ";
+	rename -uid "59DCFB60-4731-316B-DB2B-88B805CCF343";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 4.4408920985006242e-016 20 4.4408920985006242e-016
+		 35 4.4408920985006242e-016 45 4.4408920985006242e-016 60 4.4408920985006242e-016
+		 70 4.4408920985006242e-016 80 4.4408920985006242e-016 89 4.4408920985006242e-016
+		 95 4.4408920985006242e-016 108 4.4408920985006242e-016 120 4.4408920985006242e-016;
+createNode animCurveTU -n "fish_mid_scaleX";
+	rename -uid "F8043D33-4C77-A7BD-404B-79BD1F5ACD1B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "fish_mid_scaleY";
+	rename -uid "C281A337-4879-A210-EA90-6EAF05A179EE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "fish_mid_scaleZ";
+	rename -uid "CDE1CC51-4B7F-D22E-910C-73A80EEC9BE4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "fish_tail_visibility";
+	rename -uid "BAECB423-4233-4DF1-D7B2-C2A3E5EC152D";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+	setAttr -s 11 ".kot[0:10]"  5 5 5 5 5 5 5 5 
+		5 5 5;
+createNode animCurveTL -n "fish_tail_translateX";
+	rename -uid "A1706D8D-40D0-1719-B810-4CA850A0D153";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1.9999999999999996 20 1.9999999999999996
+		 35 1.9999999999999996 45 1.9999999999999996 60 1.9999999999999996 70 1.9999999999999996
+		 80 1.9999999999999996 89 1.9999999999999996 95 1.9999999999999996 108 1.9999999999999996
+		 120 1.9999999999999996;
+createNode animCurveTL -n "fish_tail_translateY";
+	rename -uid "54D62185-49DA-3397-01B1-319499A6B2F5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 95 0
+		 108 0 120 0;
+createNode animCurveTL -n "fish_tail_translateZ";
+	rename -uid "2EFA622C-4AF5-EFB4-AF43-369A265F8958";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 4.4408920985006242e-016 20 4.4408920985006242e-016
+		 35 4.4408920985006242e-016 45 4.4408920985006242e-016 60 4.4408920985006242e-016
+		 70 4.4408920985006242e-016 80 4.4408920985006242e-016 89 4.4408920985006242e-016
+		 95 4.4408920985006242e-016 108 4.4408920985006242e-016 120 4.4408920985006242e-016;
+createNode animCurveTU -n "fish_tail_scaleX";
+	rename -uid "17950914-4954-9C56-1A95-6AA17B6ADBBF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "fish_tail_scaleY";
+	rename -uid "9C87D28D-4B86-D103-9E91-B1978D1746C4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "fish_tail_scaleZ";
+	rename -uid "43AC8D98-43F2-E8E2-5282-20AFC3EF6A2F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 11 ".ktv[0:10]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 95 1
+		 108 1 120 1;
+createNode animCurveTU -n "fish_end_visibility";
+	rename -uid "F5E024BA-45D8-ACFE-FD7D-C5A191E7A6E9";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 108 1
+		 120 1;
+	setAttr -s 10 ".kot[0:9]"  5 5 5 5 5 5 5 5 
+		5 5;
+createNode animCurveTL -n "fish_end_translateX";
+	rename -uid "DAACD7D3-4EDA-C90D-60D4-E8B7D1273232";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 2.0000000000000004 20 2.0000000000000004
+		 35 2.0000000000000004 45 2.0000000000000004 60 2.0000000000000004 70 2.0000000000000004
+		 80 2.0000000000000004 89 2.0000000000000004 108 2.0000000000000004 120 2.0000000000000004;
+createNode animCurveTL -n "fish_end_translateY";
+	rename -uid "D5EAEE27-4467-57EE-F6A6-4C8FA7B12DF7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 0 20 0 35 0 45 0 60 0 70 0 80 0 89 0 108 0
+		 120 0;
+createNode animCurveTL -n "fish_end_translateZ";
+	rename -uid "8D20CB8A-4A91-537A-E790-51B3354041C2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 4.4408920985006262e-016 20 4.4408920985006262e-016
+		 35 4.4408920985006262e-016 45 4.4408920985006262e-016 60 4.4408920985006262e-016
+		 70 4.4408920985006262e-016 80 4.4408920985006262e-016 89 4.4408920985006262e-016
+		 108 4.4408920985006262e-016 120 4.4408920985006262e-016;
+createNode animCurveTU -n "fish_end_scaleX";
+	rename -uid "2B8AD12A-4F69-3006-FB3C-5F88C7B901A8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 108 1
+		 120 1;
+createNode animCurveTU -n "fish_end_scaleY";
+	rename -uid "10791D5C-4A70-C938-F5C1-C4B8AF424EC2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 108 1
+		 120 1;
+createNode animCurveTU -n "fish_end_scaleZ";
+	rename -uid "4FE47B99-43B0-D32C-906D-3C8A243809B6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 10 ".ktv[0:9]"  1 1 20 1 35 1 45 1 60 1 70 1 80 1 89 1 108 1
+		 120 1;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 76;
+	setAttr ".unw" 76;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -1344,15 +1673,65 @@ connectAttr "groupId2.id" "pCubeShape1.iog.og[1].gid";
 connectAttr "tweakSet1.mwc" "pCubeShape1.iog.og[1].gco";
 connectAttr "tweak1.vl[0].vt[0]" "pCubeShape1.twl";
 connectAttr "polySplitRing6.out" "pCubeShape1Orig.i";
+connectAttr "Control_scaleX.o" "Control.sx";
+connectAttr "Control_scaleY.o" "Control.sy";
+connectAttr "Control_scaleZ.o" "Control.sz";
 connectAttr "fishRig.di" "Control.do";
+connectAttr "Control_rotateX.o" "Control.rx";
+connectAttr "Control_rotateY.o" "Control.ry";
+connectAttr "Control_rotateZ.o" "Control.rz";
+connectAttr "Control_visibility.o" "Control.v";
+connectAttr "Control_translateX.o" "Control.tx";
+connectAttr "Control_translateY.o" "Control.ty";
+connectAttr "Control_translateZ.o" "Control.tz";
+connectAttr "fish_head_scaleX.o" "fish_head.sx";
+connectAttr "fish_head_scaleY.o" "fish_head.sy";
+connectAttr "fish_head_scaleZ.o" "fish_head.sz";
 connectAttr "Control.s" "fish_head.is";
 connectAttr "fishRig.di" "fish_head.do";
+connectAttr "fish_head_rotateX.o" "fish_head.rx";
+connectAttr "fish_head_rotateY.o" "fish_head.ry";
+connectAttr "fish_head_rotateZ.o" "fish_head.rz";
+connectAttr "fish_head_visibility.o" "fish_head.v";
+connectAttr "fish_head_translateX.o" "fish_head.tx";
+connectAttr "fish_head_translateY.o" "fish_head.ty";
+connectAttr "fish_head_translateZ.o" "fish_head.tz";
 connectAttr "fish_head.s" "fish_mid.is";
+connectAttr "fish_mid_scaleX.o" "fish_mid.sx";
+connectAttr "fish_mid_scaleY.o" "fish_mid.sy";
+connectAttr "fish_mid_scaleZ.o" "fish_mid.sz";
 connectAttr "fishRig.di" "fish_mid.do";
+connectAttr "fish_mid_rotateX.o" "fish_mid.rx";
+connectAttr "fish_mid_rotateY.o" "fish_mid.ry";
+connectAttr "fish_mid_rotateZ.o" "fish_mid.rz";
+connectAttr "fish_mid_visibility.o" "fish_mid.v";
+connectAttr "fish_mid_translateX.o" "fish_mid.tx";
+connectAttr "fish_mid_translateY.o" "fish_mid.ty";
+connectAttr "fish_mid_translateZ.o" "fish_mid.tz";
 connectAttr "fish_mid.s" "fish_tail.is";
+connectAttr "fish_tail_scaleX.o" "fish_tail.sx";
+connectAttr "fish_tail_scaleY.o" "fish_tail.sy";
+connectAttr "fish_tail_scaleZ.o" "fish_tail.sz";
 connectAttr "fishRig.di" "fish_tail.do";
+connectAttr "fish_tail_rotateX.o" "fish_tail.rx";
+connectAttr "fish_tail_rotateY.o" "fish_tail.ry";
+connectAttr "fish_tail_rotateZ.o" "fish_tail.rz";
+connectAttr "fish_tail_visibility.o" "fish_tail.v";
+connectAttr "fish_tail_translateX.o" "fish_tail.tx";
+connectAttr "fish_tail_translateY.o" "fish_tail.ty";
+connectAttr "fish_tail_translateZ.o" "fish_tail.tz";
 connectAttr "fish_tail.s" "fish_end.is";
 connectAttr "fishRig.di" "fish_end.do";
+connectAttr "fish_end_rotateX.o" "fish_end.rx";
+connectAttr "fish_end_rotateY.o" "fish_end.ry";
+connectAttr "fish_end_rotateZ.o" "fish_end.rz";
+connectAttr "fish_end_visibility.o" "fish_end.v";
+connectAttr "fish_end_translateX.o" "fish_end.tx";
+connectAttr "fish_end_translateY.o" "fish_end.ty";
+connectAttr "fish_end_translateZ.o" "fish_end.tz";
+connectAttr "fish_end_scaleX.o" "fish_end.sx";
+connectAttr "fish_end_scaleY.o" "fish_end.sy";
+connectAttr "fish_end_scaleZ.o" "fish_end.sz";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";

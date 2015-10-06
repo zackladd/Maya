@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: Biped.ma
-//Last modified: Tue, Oct 06, 2015 11:29:31 AM
+//Last modified: Tue, Oct 06, 2015 11:37:10 AM
 //Codeset: 1252
 requires maya "2016";
 requires "stereoCamera" "10.0";
@@ -15,13 +15,13 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "0DB8AF75-454E-3402-80D1-D8A324938D07";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -5.1707966107763728 11.564845591138521 14.847793143394608 ;
-	setAttr ".r" -type "double3" -30.938352735639626 -753.39999999986776 0 ;
+	setAttr ".t" -type "double3" -14.970067476113794 14.056906113178167 16.266112258262709 ;
+	setAttr ".r" -type "double3" -28.538352737585754 314.19999999997896 -4.5621254828186867e-015 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "081BFCED-49BC-33E0-6461-5288C49FD25D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 19.309730632727906;
+	setAttr ".coi" 23.169609693390527;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -247,7 +247,7 @@ createNode joint -n "hipL";
 createNode joint -n "legL" -p "hipL";
 	rename -uid "90EBB835-4771-A069-6AC3-6CA8238D401E";
 	setAttr ".t" -type "double3" 0.98497904882103193 0.18657122893059325 7.6877008562480067e-016 ;
-	setAttr ".r" -type "double3" -2.3851868165582659e-015 -4.1783869590426779e-016 -19.872581780669318 ;
+	setAttr ".r" -type "double3" -3.2613216947431209e-015 -8.0398121953901077e-016 -27.696866119181994 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
@@ -255,7 +255,7 @@ createNode joint -n "legL" -p "hipL";
 createNode joint -n "kneeL" -p "legL";
 	rename -uid "CC08DCF1-4ADD-929E-C288-8B8958D77801";
 	setAttr ".t" -type "double3" 1.1192466534641941 0.17413936216058035 -1.0144257527587781e-015 ;
-	setAttr ".r" -type "double3" -1.6182375951851941e-016 4.3260619200617193e-015 -4.2844960036430439 ;
+	setAttr ".r" -type "double3" -3.7737356218809249e-016 -4.9353364989898022e-015 8.7450656374231919 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
@@ -268,39 +268,10 @@ createNode joint -n "footL" -p "kneeL";
 	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".radi" 0.55172413793103448;
-createNode joint -n "hipL_IK";
-	rename -uid "D2FAA58C-498E-24A3-2590-048191C8887B";
-	setAttr ".t" -type "double3" 8.4765644918945018 0 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
-	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
-	setAttr ".radi" 0.60344827586206895;
-createNode joint -n "legL_IK" -p "hipL_IK";
-	rename -uid "D4D76317-49AB-C442-B9C7-749480E1BB7E";
-	setAttr ".t" -type "double3" 2.9999999999999991 0 6.6613381477509363e-016 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
-	setAttr ".radi" 0.60344827586206895;
-createNode joint -n "kneeL_IK" -p "legL_IK";
-	rename -uid "C329697A-4C6F-841C-1D09-1D80B2170774";
-	setAttr ".t" -type "double3" 2.9999999999999987 0 -1.1102230246251573e-015 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
-	setAttr ".radi" 0.55172413793103448;
-createNode joint -n "footL_IK" -p "kneeL_IK";
-	rename -uid "9AFFBFEA-4022-63D6-FEF1-F49C0184E936";
-	setAttr ".t" -type "double3" 2.0000000000000013 0 2.2204460492503139e-015 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
-	setAttr ".jo" -type "double3" 0 89.999999999999986 0 ;
-	setAttr ".radi" 0.55172413793103448;
 createNode joint -n "shoulderL";
 	rename -uid "FC00CA8A-4CFC-2521-4849-07BD917BBE16";
-	setAttr ".t" -type "double3" 7.0560178734066543 0 0 ;
+	setAttr ".t" -type "double3" -0.99980946860205533 6.2603896200353981 1.0626458890923574 ;
+	setAttr ".r" -type "double3" 89.999999999999986 -28.563002561451984 -90.000000000000014 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
@@ -308,40 +279,35 @@ createNode joint -n "shoulderL";
 	setAttr ".radi" 0.60344827586206895;
 createNode joint -n "elbowL" -p "shoulderL";
 	rename -uid "F1BE9F8A-4661-F1C8-1295-1EAFA19CD44A";
-	setAttr ".t" -type "double3" 2.9999999999999991 0 6.6613381477509363e-016 ;
+	setAttr ".t" -type "double3" 1.0484095369253805 -1.1102230246251541e-016 1.3767146299879888e-016 ;
+	setAttr ".r" -type "double3" 6.5527180646857723e-015 -4.5075071654083833e-015 69.046888129890888 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".radi" 0.60344827586206895;
 createNode joint -n "handL" -p "elbowL";
 	rename -uid "6EF14C26-4D4C-EDBC-99AE-49807C430894";
-	setAttr ".t" -type "double3" 2.9999999999999987 0 -1.1102230246251573e-015 ;
+	setAttr ".t" -type "double3" 0.96714455219858975 -8.8817841970012484e-016 -1.3322676295501886e-015 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".radi" 0.55172413793103448;
-createNode joint -n "shoulderL_IK";
-	rename -uid "A89E5FBF-4E27-C9A8-5E30-7894F558DA93";
-	setAttr ".t" -type "double3" 5.8708430827661431 0 0 ;
+createNode joint -n "root1";
+	rename -uid "B0E786C2-4B07-9E11-0529-A387BB419056";
+	setAttr ".t" -type "double3" -0.13630469183874627 6.2721000882039855 -0.189072028237353 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".dla" yes;
+	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
+	setAttr ".radi" 0.75;
+createNode joint -n "pelvis";
+	rename -uid "9EDB8107-4321-6A62-5BDC-3388D0B1C425";
+	setAttr ".t" -type "double3" -0.13630469183874627 6.2721000882039855 -0.189072028237353 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".radi" 0.60344827586206895;
-createNode joint -n "elbowL_IK" -p "shoulderL_IK";
-	rename -uid "A737C3B9-4D86-2014-24CA-5A9C8A451485";
-	setAttr ".t" -type "double3" 2.9999999999999991 0 6.6613381477509363e-016 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
-	setAttr ".radi" 0.60344827586206895;
-createNode joint -n "handL_IK" -p "elbowL_IK";
-	rename -uid "62B33ED9-45D4-A361-AF1C-D2A17AEB51CE";
-	setAttr ".t" -type "double3" 2.9999999999999987 0 -1.1102230246251573e-015 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
-	setAttr ".radi" 0.55172413793103448;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "79699F05-4FDC-5A10-F569-419ADC6B23EC";
 	setAttr -s 2 ".lnk";
@@ -732,8 +698,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 0 \n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"sequenceEditorPanel\" -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 1 \n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
 		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperGraphPanel\" -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 0.503037\n                -animateTransition 0\n                -showRelationships 1\n"
-		+ "                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 5\n                -currentNode \"joint3\" \n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"largeIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 0.503037\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 5\n                -currentNode \"joint3\" \n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n"
+		+ "                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 5\n                -currentNode \"root1\" \n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"largeIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 0.503037\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 5\n                -currentNode \"root1\" \n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n"
 		+ "                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"largeIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\tif ($useSceneConfig) {\n\t\tscriptedPanel -e -to $panelName;\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"visorPanel\" -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"createNodePanel\" -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels `;\n"
 		+ "\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"polyTexturePlacementPanel\" -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"renderWindowPanel\" -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels `;\n"
 		+ "\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"blendShapePanel\" (localizedPanelLabel(\"Blend Shape\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\tblendShapePanel -unParent -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels ;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tblendShapePanel -edit -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"dynRelEdPanel\" -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n"
@@ -1107,13 +1073,8 @@ connectAttr "layer1.di" "ikHandle1.do";
 connectAttr "hipL.s" "legL.is";
 connectAttr "legL.s" "kneeL.is";
 connectAttr "kneeL.s" "footL.is";
-connectAttr "hipL_IK.s" "legL_IK.is";
-connectAttr "legL_IK.s" "kneeL_IK.is";
-connectAttr "kneeL_IK.s" "footL_IK.is";
 connectAttr "shoulderL.s" "elbowL.is";
 connectAttr "elbowL.s" "handL.is";
-connectAttr "shoulderL_IK.s" "elbowL_IK.is";
-connectAttr "elbowL_IK.s" "handL_IK.is";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";

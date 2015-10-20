@@ -1,0 +1,69 @@
+
+//create a joint chain
+joint -p 0 0 0 ;
+joint -p 0 -4 0 ;
+joint -e -zso -oj xyz joint1;
+joint -p 0 -8 -1 ;
+joint -e -zso -oj xyz joint2;
+joint -p 0 -9 1;
+joint -e -zso -oj xyz joint3;
+select -cl  ;
+//create IK handle
+select -r joint3 ;
+select -tgl joint1 ;
+select -d joint3 joint1 ;
+select -r joint1.rotatePivot ;
+select -add joint3.rotatePivot ;
+ikHandle;
+//create a circle control
+circle -ch on -o on -nr  0 1 0;
+select -r nurbsCircleShape1;
+move -rpr -y -8 ;
+move -rpr -z -1 ;
+parent ikHandle1 nurbsCircle1;
+select -cl  ;
+select -r joint1 joint2 joint3 joint4;
+//create variables
+string $joints[] = `ls -sl`;
+int $arraySize = size($joints);
+//Rename joints
+for($i = 0; $i < $arraySize; $i++)
+{
+    $theJoints = $joints[$i] +"_L";
+}
+select -cl;
+joint -p 4 0 0 ;
+joint -p 4 -4 0 ;
+joint -e -zso -oj xyz joint1;
+joint -p 4 -8 -1 ;
+joint -e -zso -oj xyz joint2;
+joint -p 4 -9 1;
+joint -e -zso -oj xyz joint3;
+select -cl  ;
+
+select -r joint7 ;
+select -tgl joint5 ;
+select -d joint5 joint7 ;
+select -r joint5.rotatePivot ;
+select -add joint7.rotatePivot ;
+ikHandle;
+
+circle -ch on -o on -nr  0 1 0;
+select -r nurbsCircleShape2;
+move -rpr -y -8 ;
+move -rpr -z -1 ;
+move -rpr -x 4;
+parent ikHandle2 nurbsCircle2;
+
+select -cl;
+
+joint -p 2 2 0 ;
+parent joint1 joint9;
+select -cl;
+parent joint5 joint9;
+
+//create a new layer for rig
+select -r joint1 joint5;
+select -tgl ikHandle1 ;
+createDisplayLayer -name "layer1" -number 1 -nr;
+select -r nurbsCircleShape1 nurbsCircleShape2;

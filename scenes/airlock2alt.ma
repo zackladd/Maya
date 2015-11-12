@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: airlock2alt.ma
-//Last modified: Thu, Nov 12, 2015 11:56:22 AM
+//Last modified: Thu, Nov 12, 2015 03:36:51 PM
 //Codeset: 1252
 requires maya "2016";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -15,13 +15,13 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "371D03B8-4465-61FB-4FD2-7FBFFC5A0568";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 12.529879029415994 7.4324544602651397 -17.931630131347454 ;
-	setAttr ".r" -type "double3" -17.738353112565775 7696.9999999987431 0 ;
+	setAttr ".t" -type "double3" -21.452682216400046 5.3839131200755013 -6.1956400308696518 ;
+	setAttr ".r" -type "double3" -9.9383531133478122 7807.3999999969092 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "AFB7E681-4316-33C7-4129-0FBEA79BD42D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 26.623590942961073;
+	setAttr ".coi" 18.491903873104921;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2229,7 +2229,7 @@ createNode mesh -n "polySurfaceShape15" -p "pCube18";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "nurbsCircle1";
 	rename -uid "8C181A1A-43E4-459F-A209-498FAA9CE7FF";
-	setAttr ".t" -type "double3" -3 -3.9443045261050599e-031 0 ;
+	setAttr ".t" -type "double3" -1.383976362157231 -3.9443045261050599e-031 0 ;
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
 	setAttr -l on -k off ".rx";
@@ -5309,6 +5309,7 @@ createNode mia_material_x -n "glastic";
 createNode shadingEngine -n "mia_material_x1SG";
 	rename -uid "6D22D61E-4E6D-5C6E-2BD2-D28FB6CAC8EF";
 	setAttr ".ihi" 0;
+	setAttr -s 9 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo5";
 	rename -uid "B395B754-437F-2E38-98C9-EEAA95626DA9";
@@ -6101,7 +6102,7 @@ select -ne :defaultRenderingList1;
 select -ne :defaultTextureList1;
 	setAttr -s 5 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 31 ".dsm";
+	setAttr -s 22 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -6347,6 +6348,15 @@ connectAttr "file5.oa" "glastic.S11A";
 connectAttr "glastic.msg" "mia_material_x1SG.mims";
 connectAttr "glastic.msg" "mia_material_x1SG.mips";
 connectAttr "glastic.msg" "mia_material_x1SG.miss";
+connectAttr "pasted__pCubeShape17.iog" "mia_material_x1SG.dsm" -na;
+connectAttr "pasted__pCubeShape16.iog" "mia_material_x1SG.dsm" -na;
+connectAttr "pasted__pCubeShape15.iog" "mia_material_x1SG.dsm" -na;
+connectAttr "pasted__pCubeShape14.iog" "mia_material_x1SG.dsm" -na;
+connectAttr "pasted__pCubeShape13.iog" "mia_material_x1SG.dsm" -na;
+connectAttr "pasted__pCubeShape12.iog" "mia_material_x1SG.dsm" -na;
+connectAttr "pasted__pCubeShape11.iog" "mia_material_x1SG.dsm" -na;
+connectAttr "pasted__pCubeShape10.iog" "mia_material_x1SG.dsm" -na;
+connectAttr "pasted__pCubeShape9.iog" "mia_material_x1SG.dsm" -na;
 connectAttr "mia_material_x1SG.msg" "materialInfo5.sg";
 connectAttr "glastic.msg" "materialInfo5.m";
 connectAttr ":defaultColorMgtGlobals.cme" "file3.cme";
@@ -6581,13 +6591,4 @@ connectAttr "pCubeShape4.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pPlaneShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape9.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape10.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape11.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape12.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape13.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape14.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape15.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape16.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pCubeShape17.iog" ":initialShadingGroup.dsm" -na;
 // End of airlock2alt.ma

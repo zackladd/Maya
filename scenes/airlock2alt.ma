@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: airlock2alt.ma
-//Last modified: Thu, Nov 12, 2015 03:36:51 PM
+//Last modified: Tue, Nov 17, 2015 11:22:25 AM
 //Codeset: 1252
 requires maya "2016";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -15,13 +15,13 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "371D03B8-4465-61FB-4FD2-7FBFFC5A0568";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -21.452682216400046 5.3839131200755013 -6.1956400308696518 ;
+	setAttr ".t" -type "double3" -21.452682216400316 5.3839131200755519 -6.1956400308697619 ;
 	setAttr ".r" -type "double3" -9.9383531133478122 7807.3999999969092 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "AFB7E681-4316-33C7-4129-0FBEA79BD42D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 18.491903873104921;
+	setAttr ".coi" 18.491903873105223;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2229,7 +2229,7 @@ createNode mesh -n "polySurfaceShape15" -p "pCube18";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "nurbsCircle1";
 	rename -uid "8C181A1A-43E4-459F-A209-498FAA9CE7FF";
-	setAttr ".t" -type "double3" -1.383976362157231 -3.9443045261050599e-031 0 ;
+	setAttr ".t" -type "double3" 0 -3.9443045261050599e-031 0 ;
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
 	setAttr -l on -k off ".rx";
@@ -4440,17 +4440,17 @@ createNode mentalrayOptions -s -n "miDefaultOptions";
 createNode mentalrayFramebuffer -s -n "miDefaultFramebuffer";
 	rename -uid "8D0ACE7E-4549-0F4C-38DE-BFBA7D12815A";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C9E2CB69-4B4C-8DE0-2308-809D9A3F1478";
+	rename -uid "3D7D6285-42C5-2FBE-628C-E5AD9CC3D196";
 	setAttr -s 7 ".lnk";
 	setAttr -s 7 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "D38D4C70-4F52-E878-16F4-AB966BDE7512";
+	rename -uid "6681FF45-42F9-01E6-B0DE-A5942D3BB309";
 	setAttr -s 2 ".dli";
 	setAttr ".dli[4]" 1;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "57CB80BB-4F36-0E92-6CF8-968CF9A9CEEE";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "243BD351-4140-5252-9C5B-56916C2C2F3B";
+	rename -uid "C6F0C36D-43E3-1711-7BD7-8EA2B95B8C27";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0B8220E5-4E1A-7BAD-F75E-02A43A31A01B";
 	setAttr ".g" yes;
